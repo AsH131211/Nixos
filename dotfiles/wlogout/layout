@@ -1,0 +1,36 @@
+{
+    "label" : "lock",
+    "action" : "swaylock",
+    "text" : "Lock",
+    "keybind" : "l"
+}
+{
+    "label": "windows",
+    "action": "/usr/local/bin/boot-windows",
+    "text": "Boot Windows",
+    "keybind": "w"
+}
+{
+    "label" : "logout",
+    "action" : "niri msg action quit --skip-confirmation",
+    "text" : "Logout",
+    "keybind" : "e"
+}
+{
+    "label" : "shutdown",
+    "action" : "systemctl poweroff",
+    "text" : "Shutdown",
+    "keybind" : "s"
+}
+{
+    "label" : "suspend",
+    "action" : "swaylock -f && sleep 1 && niri msg action power-off-monitors && sleep 1 && niri msg action power-off-monitors",
+    "text" : "Sleep",
+    "keybind" : "u"
+}
+{
+    "label" : "reboot",
+    "action" : "systemctl reboot",
+    "text" : "Reboot",
+    "keybind" : "r"
+}

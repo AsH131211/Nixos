@@ -45,6 +45,7 @@
     file
     tree
     yazi
+    eza
 
     # Development
     vscode

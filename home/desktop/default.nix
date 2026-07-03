@@ -7,5 +7,7 @@
     ./fuzzel.nix
     ./mako.nix
     ./wlogout.nix
+    ./swaylock.nix
+    ./swayosd.nix
   ];
 }

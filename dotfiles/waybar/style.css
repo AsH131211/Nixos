@@ -1,0 +1,219 @@
+/* ── Fonts & Base ──────────────────────────────────────────────────────── */
+* {
+    font-family: "Nunito", "Symbols Nerd Font", sans-serif;
+    font-size: 12px;
+    min-height: 0;
+    border: none;
+    border-radius: 0;
+}
+
+/* ── Bar ───────────────────────────────────────────────────────────────── */
+window#waybar {
+    background: rgba(0, 0, 0, 0.55);
+    border: 1px solid rgba(0, 0, 0, 0.989);
+    border-radius: 14px;
+    color: #d3c6aa;
+}
+
+window#waybar > box {
+    background: transparent;
+    border-bottom: none;
+}
+
+/* ── Modules shared ────────────────────────────────────────────────────── */
+.modules-left,
+.modules-right {
+    padding: 0 4px;
+}
+
+/* ── Workspaces ────────────────────────────────────────────────────────── */
+#workspaces {
+    background: rgba(0, 0, 0, 0.6);
+    border-radius: 10px;
+    margin: 2px 4px;
+    padding: 0 2px;
+}
+
+#workspaces button {
+    color: #9da9a0;
+    padding: 0 5px;
+    border-radius: 8px;
+    transition: all 0.3s ease;
+    min-width: 20px;
+}
+
+#workspaces button:hover {
+    background: rgba(211, 198, 170, 0.1);
+    color: #d3c6aa;
+}
+
+#workspaces button.active {
+    color: #a7c080;
+    background: rgba(211, 198, 170, 0);
+}
+
+#workspaces button.urgent {
+    color: #d3c6aa;
+    background: rgba(230, 126, 128, 0.25);
+}
+
+/* ── Window title ──────────────────────────────────────────────────────── */
+#window {
+    color: #d3c6aa;
+    padding: 0 8px;
+    font-size: 11px;
+    font-style: italic;
+}
+
+/* ── Dynamic Island Clock ──────────────────────────────────────────────── */
+#clock {
+    font-family: "JetBrainsMono Nerd Font", monospace;
+    background: #272e33;
+    color: #d3c6aa;
+    border-radius: 999px;
+    padding: 2px 16px;
+    margin: 2px 0;
+    font-size: 13px;
+    font-weight: bold;
+    letter-spacing: 1px;
+    border: 1px solid rgba(211, 198, 170, 0.15);
+    transition: all 0.4s ease;
+    min-width: 140px;
+}
+
+#clock:hover {
+    background: #323c41;
+    border-color: rgba(211, 198, 170, 0.35);
+    padding: 2px 22px;
+    color: #d3c6aa;
+}
+
+/* ── Cava ──────────────────────────────────────────────────────────────── */
+#custom-cava {
+    color: #d3c6aa;
+    font-size: 10px;
+    padding: 0 4px;
+    letter-spacing: 2px;
+    font-family: "Symbols Nerd Font", monospace;
+}
+
+/* ── GPU info ──────────────────────────────────────────────────────────── */
+#custom-gpu-info {
+    color: #d3c6aa;
+    padding: 0 6px;
+}
+
+/* ── Temperature ───────────────────────────────────────────────────────── */
+#temperature {
+    color: #d3c6aa;
+    padding: 0 6px;
+}
+
+#temperature.critical {
+    color: #e67e80;
+}
+
+/* ── CPU & Memory ──────────────────────────────────────────────────────── */
+#cpu {
+    color: #d3c6aa;
+    padding: 0 6px;
+}
+
+#memory {
+    color: #d3c6aa;
+    padding: 0 6px;
+}
+
+/* ── Network ───────────────────────────────────────────────────────────── */
+#network {
+    color: #a7c080;
+    padding: 0 6px;
+}
+
+#network.disconnected {
+    color: #e67e80;
+}
+
+/* ── Pulseaudio ────────────────────────────────────────────────────────── */
+#pulseaudio {
+    color: #d3c6aa;
+    padding: 0 6px;
+}
+
+#pulseaudio.muted {
+    color: #e67e80;
+}
+
+/* ── Bluetooth ─────────────────────────────────────────────────────────── */
+#bluetooth {
+    color: #0d6ddb;
+    padding: 0 6px;
+}
+
+#bluetooth.disabled {
+    color: #859289;
+}
+
+/* ── Battery ───────────────────────────────────────────────────────────── */
+#battery {
+    color: #d3c6aa;
+    padding: 0 6px;
+    margin: 2px 2px;
+    transition: color 0.3s ease;
+}
+
+#battery.warning {
+    color: #dbbc7f;
+}
+
+#battery.critical {
+    color: #e67e80;
+}
+
+#battery.charging {
+    color: #a7c080;
+}
+
+/* ── Notification ──────────────────────────────────────────────────────── */
+#custom-notification {
+    color: #d3c6aa;
+    padding: 0 6px;
+    margin: 2px 2px;
+    transition: color 0.3s ease;
+}
+
+/* ── Exit ──────────────────────────────────────────────────────────────── */
+#custom-exit {
+    color: #b43537;
+    padding: 0 8px;
+    margin: 2px 2px 2px 0;
+    font-size: 13px;
+    border-radius: 8px;
+    transition: all 0.3s ease;
+}
+
+/* ── Hover backgrounds (pill style) ───────────────────────────────────── */
+#custom-cava:hover,
+#custom-gpu-info:hover,
+#temperature:hover,
+#cpu:hover,
+#memory:hover,
+#network:hover,
+#pulseaudio:hover,
+#bluetooth:hover,
+#battery:hover,
+#custom-notification:hover,
+#custom-exit:hover {
+    background: rgba(0, 0, 0, 0.6);
+    border-radius: 999px;
+    transition: all 0.3s ease;
+}
+
+/* ── Tooltip ───────────────────────────────────────────────────────────── */
+tooltip {
+    background: #272e33;
+    border: 1px solid rgba(211, 198, 170, 0.15);
+    border-radius: 10px;
+    color: #d3c6aa;
+    padding: 4px 8px;
+}

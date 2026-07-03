@@ -1,0 +1,64 @@
+* {
+    background-image: none;
+    font-family: "JetBrainsMono Nerd Font", sans-serif;
+}
+
+window {
+    background-color: rgba(0, 0, 0, 0.5); /* The background dim */
+}
+
+button {
+    color: #cdd6f4;
+    background-color: rgba(30, 30, 46, 0.5); /* Onyx Glass */
+    border: 2px solid rgba(255, 255, 255, 0.1); /* The "Bezel" */
+    border-radius: 20px;
+    margin: 15px;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: 25%;
+    transition: all 0.3s ease-in-out; /* Smooth hover transition */
+}
+
+button:focus,
+button:active,
+button:hover {
+    background-color: rgba(137, 180, 250, 0.2); /* Soft Blue Tint */
+    border: 2px solid #89b4fa; /* Glowing Edge */
+    color: #89b4fa;
+    outline-style: none;
+}
+
+/* --- Icon Setup --- */
+/* You need to point these to where your icons are stored */
+
+#lock {
+    background-image: image(url("/usr/share/wlogout/icons/lock.png"));
+}
+
+#logout {
+    background-image: image(url("/usr/share/wlogout/icons/logout.png"));
+}
+
+#shutdown {
+    background-image: image(url("/usr/share/wlogout/icons/shutdown.png"));
+}
+
+#reboot {
+    background-image: image(url("/usr/share/wlogout/icons/reboot.png"));
+}
+
+#windows {
+    background-image: image(url("/usr/share/wlogout/icons/windows.png"));
+}
+/* Add this to the bottom of your style.css */
+
+#suspend {
+    background-image: image(url("/usr/share/wlogout/icons/hibernate.png"));
+}
+
+/* Optional: Unique hover color for Suspend (Amber/Yellow) */
+#windows:hover {
+    background-color: rgba(250, 179, 135, 0.2); 
+    border: 2px solid #fab387;
+    color: #fab387;
+}

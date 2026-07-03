@@ -1,0 +1,155 @@
+{
+    "layer": "top",
+    "position": "top",
+    "margin-top": 6,
+    "margin-left": 10,
+    "margin-right": 10,
+    "exclusive": true,
+    "passthrough": false,
+    "gtk-layer-shell": true,
+
+    "modules-left": [
+        "niri/workspaces",
+        "niri/window"
+    ],
+    "modules-center": [
+        "clock"
+    ],
+    "modules-right": [
+        "custom/cava",
+        "custom/gpu-info",
+        "network",
+        "bluetooth",
+        "pulseaudio",
+        "temperature",
+        "memory",
+        "cpu",
+        "battery",
+        "custom/notification",
+        "custom/exit"
+    ],
+
+    "niri/workspaces": {
+        "format": "{icon}",
+        "on-click": "activate",
+        "format-icons": {
+            "active":  "󰮯",
+            "default": "󰊠",
+            "empty":   "󰊠",
+            "urgent":  "󰀨"
+        },
+        "sort-by-number": true,
+        "persistent-workspaces": {
+            "*": 6
+        }
+    },
+
+    "niri/window": {
+        "format": "{}",
+        "max-length": 40,
+        "separate-outputs": true
+    },
+
+    "clock": {
+        "interval": 1,
+        "format": "󱑍  {:%H:%M:%S}",
+        "format-alt": "󰃭  {:%a, %b %d %Y}",
+        "locale": "en_US.UTF-8",
+        "tooltip": true,
+        "tooltip-format": "<tt><small>{calendar}</small></tt>",
+    },
+
+    "custom/cava": {
+        "exec": "sleep 1 && cava -p ~/.config/cava/waybar.ini | tr -d '\n' | sed 's/./& /g'",
+        "format": "{}",
+        "tooltip": false
+    },
+
+    "custom/gpu-info": {
+        "interval": 2,
+        "return-type": "json",
+        "exec": "nvidia-smi --query-gpu=temperature.gpu,power.draw,memory.used,memory.total --format=csv,noheader,nounits | awk -F', ' '{printf \"{\\\"text\\\": \\\"%s°C   %sW   %d%%\\\", \\\"tooltip\\\": \\\"VRAM Used: %sMB / %sMB\\\"}\\n\", $1, $2, ($3/$4)*100, $3, $4}'",
+        "format": "󱐋 {}",
+        "on-click": "alacritty -e sh -c 'nvitop; echo; read -n 1 -s -r -p \"Press any key to close...\"'"
+    },
+
+    "temperature": {
+        "hwmon-path": "/sys/class/hwmon/hwmon2/temp1_input",
+        "critical-threshold": 80,
+        "format": "{icon} {temperatureC}°C",
+        "format-critical": "󰸁 {temperatureC}°C",
+        "format-icons": ["󱃃", "󰔏", "󱃂"],
+        "tooltip": true
+    },
+
+    "memory": {
+        "interval": 5,
+        "format": "󰍛 {}%",
+        "tooltip": true,
+        "on-click": "alacritty -e btop"
+    },
+
+    "cpu": {
+        "interval": 1,
+        "format": "󰻠 {usage}%",
+        "tooltip": true,
+        "on-click": "alacritty -e btop"
+    },
+
+    "network": {
+        "format-wifi": "󰖩 {bandwidthDownBits}",
+        "format-ethernet": "󰈀 {bandwidthDownBits}",
+        "format-disconnected": "󰖪",
+        "on-click": "alacritty --title wifi-popup -e wifitui",
+        "tooltip": true,
+        "tooltip-format": "{essid} — {signalStrength}%\n{ipaddr}"
+    },
+
+    "pulseaudio": {
+        "format": "{icon} {volume}%",
+        "format-muted": "󰝟",
+        "format-icons": {
+            "default": ["󰕿", "󰖀", "󰕾"]
+        },
+        "on-click": "pavucontrol"
+    },
+
+    "bluetooth": {
+        "format": "󰂯",
+        "format-disabled": "󰂲",
+        "format-connected": "󰂱 {device_alias}",
+        "on-click": "alacritty -e bluetuith",
+        "tooltip-format": "{status}"
+    },
+
+    "custom/notification": {
+        "format": "{icon}",
+        "format-icons": {
+            "notification":     "󱅫",
+            "none":             "󰂚",
+            "dnd-notification": "󱅫",
+            "dnd-none":         "󰂛"
+        },
+        "return-type": "json",
+        "exec-if": "which swaync-client",
+        "exec": "swaync-client -swb",
+        "on-click": "swaync-client -t -sw",
+        "on-click-right": "swaync-client -d -sw",
+        "escape": true
+    },
+
+    "battery": {
+        "states": { "warning": 30, "critical": 15 },
+        "format": "{icon} {capacity}%",
+        "format-charging": "󰂄 {capacity}%",
+        "format-full": "󰁹 Full",
+        "format-icons": ["󰁺","󰁻","󰁼","󰁽","󰁾","󰁿","󰂀","󰂁","󰂂","󰁹"],
+        "tooltip-format": "{timeTo} — {power}W"
+    },
+
+    "custom/exit": {
+        "format": "⏻",
+        "on-click": "wlogout",
+        "tooltip": false
+    }
+}
