@@ -1,6 +1,5 @@
 { ... }:
 
 {
-  xdg.configFile."fuzzel/fuzzel.ini".source =
-    ../../dotfiles/fuzzel/fuzzel.ini;
+  home.file.".config/fuzzel".source = ../../dotfiles/fuzzel;
 }

@@ -1,21 +1,16 @@
 { ... }:
 
 {
-  # Enable X11
   services.xserver.enable = true;
 
-  # Display Manager (we'll change to SDDM later)
-  services.displayManager.gdm.enable = true;
+  services.displayManager.gdm.enable = false;
 
-  # GNOME Desktop
-  services.desktopManager.gnome.enable = true;
-
-  # Hyprland
-  programs.hyprland = {
+  services.displayManager.sddm = {
     enable = true;
-    xwayland.enable = true;
+    wayland.enable = true;
   };
 
-  # Firefox
-  programs.firefox.enable = false;
+  services.desktopManager.gnome.enable = true;
+
+  programs.niri.enable = true;
 }

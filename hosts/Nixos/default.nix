@@ -14,5 +14,6 @@
     ../../modules/services.nix
     ../../modules/nix.nix
     ../../modules/security.nix
+    ../../modules/fonts.nix
   ];
 }

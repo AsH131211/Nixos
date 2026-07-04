@@ -2,7 +2,7 @@
 
 {
   imports = [
-    ./hyprland.nix
+    ./niri.nix
     ./waybar.nix
     ./fuzzel.nix
     ./mako.nix

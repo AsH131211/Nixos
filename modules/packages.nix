@@ -17,11 +17,13 @@
     git
     networkmanagerapplet
     wifitui
+    lazygit
 
     # Browser
     brave
+    google-chrome
 
-    # Wayland / Hyprland
+    # Wayland / Niri
     waybar
     fuzzel
     mako
@@ -33,6 +35,10 @@
     wl-clipboard
     grim
     slurp
+    xwayland-satellite
+    pciutils
+    polkit_gnome
+    
 
     # Utilities
     brightnessctl
@@ -46,6 +52,8 @@
     tree
     yazi
     eza
+    fd
+    ripgrep
 
     # Development
     vscode

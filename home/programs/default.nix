@@ -2,9 +2,9 @@
 
 {
   imports = [
-    ./git.nix
     ./fish.nix
-    ./kitty.nix
+    ./git.nix
     ./fastfetch.nix
+    ./kitty.nix
   ];
 }
