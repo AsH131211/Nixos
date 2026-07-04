@@ -54,8 +54,8 @@
     python3
 
     # ASUS
-    asusctl
-    supergfxctl
+   # asusctl
+    #supergfxctl
 
     # GPU
     nvitop
