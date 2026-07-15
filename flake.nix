@@ -11,9 +11,16 @@
 
     # Optional: newer packages when you need them
     nixpkgs-unstable.url = "github:NixOS/nixpkgs/nixos-unstable";
+
+
+    stylix = {
+        url = "github:danth/stylix/release-26.05";
+	inputs.nixpkgs.follows = "nixpkgs";
+   };
   };
 
-  outputs = { self, nixpkgs, home-manager, nixpkgs-unstable, ... }:
+  # Added 'helium' to the outputs destructured arguments
+  outputs = { self, nixpkgs, home-manager, nixpkgs-unstable, stylix, ... }:
   let
     system = "x86_64-linux";
   in {
@@ -26,15 +33,22 @@
 
        modules = [
          ./hosts/Nixos/default.nix
+         
+          stylix.nixosModules.stylix
 
          home-manager.nixosModules.home-manager
 
-         {
-           home-manager.useGlobalPkgs = true;
-           home-manager.useUserPackages = true;
-  
-           home-manager.users.ash = import ./home/ash.nix;
-         }
+       {
+  	  home-manager.useGlobalPkgs = true;
+  	  home-manager.useUserPackages = true;
+
+  	  home-manager.sharedModules = [
+    	    stylix.homeModules.stylix
+  	  ];
+
+  	home-manager.users.ash = import ./home/ash.nix;
+	}
+
       ];
     };
   };

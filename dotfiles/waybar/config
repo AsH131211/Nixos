@@ -70,7 +70,7 @@
         "return-type": "json",
         "exec": "nvidia-smi --query-gpu=temperature.gpu,power.draw,memory.used,memory.total --format=csv,noheader,nounits | awk -F', ' '{printf \"{\\\"text\\\": \\\"%s°C   %sW   %d%%\\\", \\\"tooltip\\\": \\\"VRAM Used: %sMB / %sMB\\\"}\\n\", $1, $2, ($3/$4)*100, $3, $4}'",
         "format": "󱐋 {}",
-        "on-click": "alacritty -e sh -c 'nvitop; echo; read -n 1 -s -r -p \"Press any key to close...\"'"
+        "on-click": "kitty -e sh -c 'nvitop; echo; read -n 1 -s -r -p \"Press any key to close...\"'"
     },
 
     "temperature": {
@@ -86,21 +86,21 @@
         "interval": 5,
         "format": "󰍛 {}%",
         "tooltip": true,
-        "on-click": "alacritty -e btop"
+        "on-click": "kitty -e btop"
     },
 
     "cpu": {
         "interval": 1,
         "format": "󰻠 {usage}%",
         "tooltip": true,
-        "on-click": "alacritty -e btop"
+        "on-click": "kitty -e btop"
     },
 
     "network": {
         "format-wifi": "󰖩 {bandwidthDownBits}",
         "format-ethernet": "󰈀 {bandwidthDownBits}",
         "format-disconnected": "󰖪",
-        "on-click": "alacritty --title wifi-popup -e wifitui",
+        "on-click": "kitty --title wifi-popup -e wifitui",
         "tooltip": true,
         "tooltip-format": "{essid} — {signalStrength}%\n{ipaddr}"
     },
@@ -118,7 +118,7 @@
         "format": "󰂯",
         "format-disabled": "󰂲",
         "format-connected": "󰂱 {device_alias}",
-        "on-click": "alacritty -e bluetuith",
+        "on-click": "kitty -e bluetuith",
         "tooltip-format": "{status}"
     },
 

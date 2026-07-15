@@ -1,4 +1,3 @@
-// Niri configuration for CachyOS
 // For documentation and full reference, see: https://github.com/YaLTeR/niri/wiki
 
 // ────────────── Input Configuration ──────────────
@@ -18,7 +17,7 @@ input {
     }
 
     mouse {
-        accel-speed -0.6 
+        accel-speed -0.8 
     }
 
     focus-follows-mouse // Automatically focus windows under the mouse pointer
@@ -29,10 +28,9 @@ input {
 // You can run `niri msg outputs` to get the correct name for your displays.
 // You will have to remove "/-" and edit it before it takes effect.
 // https://github.com/YaLTeR/niri/wiki/Configuration:-Outputs
-
 output "eDP-1" {
     mode "1920x1080@144" // Set resolution and refresh rate
-    scale 1.2 // No scaling (use 2 for HiDPI)
+    scale 1.0 // No scaling (use 2 for HiDPI)
 }
 
 // ────────────── Keybindings ──────────────
@@ -199,13 +197,11 @@ F8 {
 }
 
 // ────────────── Startup Applications ──────────────
-// https://github.com/YaLTeR/niri/wiki/Configuration:-Miscellaneous#spawn-sh-at-startup
-	
-    spawn-sh-at-startup "swww-daemon"
-    spawn-sh-at-startup "waypaper --restore"
-    spawn-sh-at-startup "waybar"
+// https://github.com/YaLTeR/niri/wiki/Configuration:-Miscellaneous#spawn-sh-at-startup    spawn-sh-at-startup "awww-daemon"
     spawn-sh-at-startup "swayosd-server"
     spawn-sh-at-startup "xwayland-satellite"
+    spawn-sh-at-startup "waybar"
+    spawn-sh-at-startup "sh -c 'sleep 1 && waypaper --restore'"
 
     screenshot-path "~/Pictures/Screenshot_%Y-%m-%d_%H-%M-%S.png"
     
@@ -221,12 +217,12 @@ F8 {
     
 
     focus-ring {
-        width 0
+        width 1
         
         
         
-        active-gradient from="#ffffffaa" to="#ffffff11" angle=45
-        inactive-color "#1a1a1acc" 
+       active-gradient from="#FFD300FF" to="#00F5FF99" angle=35
+inactive-color "#101014CC" 
     }
 
     shadow {

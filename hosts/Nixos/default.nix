@@ -5,6 +5,9 @@
     ./hardware-configuration.nix
 
     ../../modules/boot.nix
+    ../../modules/stylix.nix
+    ../../modules/sddm.nix
+    ../../modules/graphics.nix
     ../../modules/networking.nix
     ../../modules/locale.nix
     ../../modules/desktop.nix

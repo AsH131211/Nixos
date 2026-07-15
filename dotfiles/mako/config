@@ -1,0 +1,92 @@
+#########################################
+# Mako - Cyberpunk 2077 Theme
+#########################################
+
+# Position
+anchor=top-right
+margin=20
+
+# Size
+width=380
+height=150
+
+# Rounded corners
+border-radius=14
+border-size=2
+
+# Colors
+background-color=#050505EE
+border-color=#00F5FF
+text-color=#F5F5F5
+progress-color=over #00F5FF
+
+# Font
+font=JetBrainsMono Nerd Font 11
+
+# Padding
+padding=14
+outer-margin=0
+
+# Icons
+icons=1
+icon-path=/run/current-system/sw/share/icons/Papirus-Dark
+
+# Markup
+markup=1
+
+# Notification timeout
+default-timeout=5000
+ignore-timeout=0
+
+# History
+max-history=20
+
+# Sorting
+sort=-time
+
+# Group notifications
+group-by=summary
+
+# Hide duplicate notifications
+max-visible=5
+
+# Actions
+actions=1
+
+# Format
+format=<b>%s</b>\n%b
+
+# Text wrapping
+max-icon-size=48
+
+
+
+#########################################
+# Low Urgency
+#########################################
+
+[urgency=low]
+border-color=#00F5FF
+background-color=#050505DD
+text-color=#B8B8B8
+default-timeout=3000
+
+#########################################
+# Normal Urgency
+#########################################
+
+[urgency=normal]
+border-color=#00F5FF
+background-color=#050505EE
+text-color=#F5F5F5
+default-timeout=5000
+
+#########################################
+# High Urgency
+#########################################
+
+[urgency=high]
+border-color=#FF004D
+background-color=#140509
+text-color=#FFFFFF
+default-timeout=0

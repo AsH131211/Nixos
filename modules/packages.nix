@@ -34,6 +34,7 @@
     waypaper
     wl-clipboard
     grim
+    swayosd
     slurp
     xwayland-satellite
     pciutils
@@ -67,6 +68,6 @@
 
     # GPU
     nvitop
-    #nvtopPackages.nvidia
+    nvtopPackages.nvidia
   ];
 }

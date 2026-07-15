@@ -1,51 +1,101 @@
+########################################
+# Swaylock - Cyberpunk 2077
+########################################
+
 ignore-empty-password
 font=JetBrainsMono Nerd Font
 
+########################################
+# Clock
+########################################
+
 clock
 timestr=%R
-datestr=%a, %e %B
+datestr=%A, %d %B
+
+########################################
+# Effects
+########################################
 
 screenshots
 
-fade-in=0.2
+fade-in=0.35
 
-effect-blur=20x3
-effect-scale=0.35
+effect-blur=32x4
+effect-scale=0.30
+
+########################################
+# Indicator
+########################################
 
 indicator
-indicator-radius=240
-indicator-thickness=18
+indicator-radius=235
+indicator-thickness=16
 indicator-caps-lock
 
 separator-color=00000000
 
-key-hl-color=A7C080FF
-bs-hl-color=E67E80FF
-caps-lock-key-hl-color=DBBC7FFF
-caps-lock-bs-hl-color=E67E80FF
+########################################
+# Highlight Colors
+########################################
 
-inside-color=232A2ECC
-inside-clear-color=232A2ECC
-inside-caps-lock-color=232A2ECC
-inside-ver-color=232A2ECC
-inside-wrong-color=232A2ECC
+key-hl-color=FFD300FF
+bs-hl-color=FF008CFF
 
-ring-color=7FBBB3CC
-ring-clear-color=7FBBB3CC
-ring-caps-lock-color=DBBC7FCC
-ring-ver-color=A7C080CC
-ring-wrong-color=E67E80CC
+caps-lock-key-hl-color=FFD300FF
+caps-lock-bs-hl-color=FF008CFF
+
+########################################
+# Center Background
+########################################
+
+inside-color=050505DD
+inside-clear-color=050505DD
+inside-caps-lock-color=050505DD
+inside-ver-color=050505DD
+inside-wrong-color=050505DD
+
+########################################
+# Rings
+########################################
+
+ring-color=00F5FFCC
+ring-clear-color=FFD300CC
+ring-caps-lock-color=FFD300CC
+ring-ver-color=00FF87CC
+ring-wrong-color=FF0055CC
+
+########################################
+# Ring Line
+########################################
 
 line-color=00000000
-line-clear-color=DBBC7FFF
-line-caps-lock-color=DBBC7FFF
-line-ver-color=A7C080FF
-line-wrong-color=E67E80FF
 
-text-color=D3C6AAFF
-text-clear-color=D3C6AAFF
-text-ver-color=D3C6AAFF
-text-wrong-color=D3C6AAFF
+line-clear-color=FFD300FF
+line-caps-lock-color=FFD300FF
+line-ver-color=00FF87FF
+line-wrong-color=FF0055FF
+
+########################################
+# Text
+########################################
+
+text-color=F5F5F5FF
+
+text-clear-color=FFD300FF
+
+text-ver-color=00FF87FF
+
+text-wrong-color=FF0055FF
 
 disable-caps-lock-text
-text-caps-lock-color=DBBC7FFF
+
+text-caps-lock-color=FFD300FF
+
+########################################
+# Optional Indicator Labels
+########################################
+
+show-failed-attempts
+
+indicator-idle-visible
